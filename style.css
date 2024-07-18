@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+@font-face {
+  font-family: digital;
+  src: url('./font/digital-7.ttf')  format('truetype');
+}
+
+*::selection{
+  background-color: hsla(17, 91%, 59%, 0.738);
+  color: #dfd9d9;
+}
+
+
+
+.head{
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1.5em;
+  color: #1f1f1f;
+}
+
+.para2{
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1em;
+  color: hsl(17, 91%, 48%);
+}
+
+/* Fancy-ass Input Styling 2.0 */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+
+}
+
+.input-wrapper input {
+  text-align: right;
+  font-family: digital;
+  letter-spacing: 0.25rem;
+  background-color: #353535;
+  border: 2px solid #f1ebd8cb;
+  padding: 1.2rem 1rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 1rem;
+  color: #a2a2a2;
+  box-shadow: 0 0.4rem #dfd9d9, inset 0 0 0 transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: hsl(17, 91%, 48%);
+  box-shadow: 0 0.6rem #dfd9d9, inset 0 0 10px rgba(255, 127, 127, 0.2);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.input-wrapper input::placeholder {
+  color: #a2a2a2a1;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus::placeholder {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.input-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper:hover::after {
+  opacity: 1;
+  right: 1.5rem;
+}
+
+/* New shit */
+.input-wrapper input:hover {
+  background-color: #494949;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.input-wrapper input:invalid {
+  animation: shake 0.5s ease-in-out;
+  border-color: hsl(17, 91%, 48%);
+}
+
+
+
+/* button */
+
+
+.pushable {
+ 
+
+  position: relative;
+  background: transparent;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+  outline-color: rgb(109, 109, 109);
+  transition: filter 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: hsla(0, 0%, 18%, 0.366);
+  border-radius: 8px;
+  filter: blur(2px);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    hsl(0, 1%, 33%) 0%,
+    hsl(0, 1%, 35%) 8%,
+    hsl(0, 3%, 23%) 92%,
+    hsl(0, 0%, 37%) 100%
+  );
+}
+#exp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    hsl(15, 69%, 58%) 0%,
+    hsl(19, 71%, 62%) 8%,
+    hsl(22, 74%, 62%) 92%,
+    hsl(21, 88%, 48%) 100%
+  );
+}
+
+#lig {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    hsl(60, 1%, 57%) 0%,
+    hsl(42, 15%, 83%) 8%,
+    hsl(34, 6%, 77%) 92%,
+    hsl(40, 3%, 61%) 100%
+  );
+}
+
+
+
+.front {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  background: hsl(0, 0%, 22%);
+  padding: 16px 32px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.3rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.frontlig {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  background: hsl(40, 21%, 89%);
+  padding: 16px 32px;
+  color: rgb(66, 66, 66);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.3rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.frontexp {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  background: hsl(17, 91%, 48%);
+  padding: 16px 32px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.3rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+
+
+.pushable:hover {
+  filter: brightness(105%);
+}
+
+.pushable:hover .frontlig {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.pushable:hover .frontexp {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+.pushable:active .frontlig {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+.pushable:active .frontexp {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.box{
+  box-shadow: 0px 10px 0px rgb(219, 217, 208);
+  border: rgba(241, 234, 220, 0.534) solid 1px;
+}
